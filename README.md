@@ -10,6 +10,10 @@ A simple **JavaScript Canvas-based Snake Game**.
 - walls
 - Restart button to reset the game
 
+## Play Online
+You can play the game directly in your browser here:
+https://behramaras.github.io/snake-game/
+
 ## Installation and Running
 
 1. Clone this repository or download as a ZIP:
