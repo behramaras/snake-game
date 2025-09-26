@@ -1,0 +1,14 @@
+#restartBtn {
+  display: block; 
+  margin-top: 10px;
+  padding: 10px 20px;
+  font-size: 20px;
+  background: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+#restartBtn:hover {
+  background: #45a049;
+}
