@@ -12,3 +12,15 @@
 #restartBtn:hover {
   background: #45a049;
 }
+
+
+@media screen and (max-width: 600px) {
+
+  canvas {
+  width: 95vw;   
+  height: 50vh;  
+  display: block; 
+
+  }
+
+}

@@ -183,8 +183,13 @@ window.addEventListener("load", ()=>{
                 break;
         }
     });
+    document.querySelector('.up').addEventListener('click', () => snake.changeDirection(0));
+    document.querySelector('.right').addEventListener('click', () => snake.changeDirection(1));
+    document.querySelector('.down').addEventListener('click', () => snake.changeDirection(2));
+    document.querySelector('.left').addEventListener('click', () => snake.changeDirection(3));
 });
 
 document.getElementById("restartBtn").addEventListener("click", () => {
     window.location.reload();
 });
+
