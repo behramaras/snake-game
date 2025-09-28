@@ -24,3 +24,16 @@
   }
 
 }
+
+.directional-buttons {
+    position: absolute; 
+    display: grid;
+    grid-gap: 0.8rem;
+    grid-template-columns: 40fr 60fr 40fr;
+    grid-template-rows: 40fr 60fr 40fr;
+    grid-template-areas: 
+        "....  up  ..... "
+        "left  ..  right"
+        ".... down .....";
+    z-index: 1000;
+}

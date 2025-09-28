@@ -187,6 +187,20 @@ window.addEventListener("load", ()=>{
     document.querySelector('.right').addEventListener('click', () => snake.changeDirection(1));
     document.querySelector('.down').addEventListener('click', () => snake.changeDirection(2));
     document.querySelector('.left').addEventListener('click', () => snake.changeDirection(3));
+
+    const canvas = document.getElementById('myCanvas');
+    const buttons = document.querySelector('.directional-buttons');
+
+    function positionButtons() {
+        const rect = canvas.getBoundingClientRect();
+        buttons.style.position = 'absolute';
+        buttons.style.top = rect.bottom + 10 + 'px'; 
+        buttons.style.left = rect.left + rect.width - buttons.offsetWidth + 'px'; 
+    }
+
+    positionButtons(); 
+    window.addEventListener('resize', positionButtons); 
+
 });
 
 document.getElementById("restartBtn").addEventListener("click", () => {
