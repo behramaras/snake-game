@@ -25,11 +25,18 @@ git clone https://github.com/behramaras/snake-game.git
 
 2. Open 'index.html' in your browser.  
 
-3. Play the game:  
+3. Play the game:
+   - **Keyboard:**
    - Snake controls:  
      - W → Up  
      - A → Left  
      - S → Down  
      - D → Right
-       
+   - **Mobile / Touch:**
+     - Tap the on-screen directional buttons to control the snake
    - Use the Restart button to restart the game.
+
+4. Gameplay
+- Collect the green food squares to grow your snake.
+- Avoid colliding with your own body or black walls.
+- The game ends on collision, and your score is displayed.
