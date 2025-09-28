@@ -32,7 +32,7 @@ git clone https://github.com/behramaras/snake-game.git
      - A → Left  
      - S → Down  
      - D → Right
-   - **Mobile / Touch:**
+   - **Mobile:**
      - Tap the on-screen directional buttons to control the snake
    - Use the Restart button to restart the game.
 
