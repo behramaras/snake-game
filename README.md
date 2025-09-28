@@ -7,7 +7,7 @@ A simple **JavaScript Canvas-based Snake Game**.
 - Snake movement (controlled with WASD keys)
 - Food spawning and snake growth
 - Self-collision detection (game over)
-- walls
+- Black walls
 - Restart button to reset the game
 
 ## Play Online
