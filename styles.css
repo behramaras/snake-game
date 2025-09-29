@@ -9,9 +9,22 @@
   border-radius: 8px;
   cursor: pointer;
 }
-#restartBtn:hover {
-  background: #45a049;
+
+
+#twiceFastBtn {
+  display: block; 
+  margin-top: 10px;
+  padding: 10px 20px;
+  font-size: 20px;
+  background: #008CBA;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  
+  position: static;
 }
+
 
 
 @media screen and (max-width: 600px) {

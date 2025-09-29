@@ -2,7 +2,7 @@ const canvas = document.getElementById("myCanvas");
 const ctx = canvas.getContext("2d");
 
 const SIZE = 20;
-const WINDOWSIZE = 600;
+const WINDOWSIZE = 200;
 const MAXFOOD = 5;
 
 class BodyPart{
@@ -35,11 +35,11 @@ class Snake{
         this.isDeath = false;
         this.foods = [];
         this.walls = [];
-        this.walls.push(new BodyPart(80,80, SIZE, 'black'));
-        this.walls.push(new BodyPart(100,80, SIZE, 'black'));
-        this.walls.push(new BodyPart(120,80, SIZE, 'black'));
-        this.walls.push(new BodyPart(140,80, SIZE, 'black'));
-        this.walls.push(new BodyPart(160,80, SIZE, 'black'));
+        this.walls.push(new BodyPart(80,80, SIZE, 'white'));
+        this.walls.push(new BodyPart(100,80, SIZE, 'white'));
+        this.walls.push(new BodyPart(120,80, SIZE, 'white'));
+        this.walls.push(new BodyPart(140,80, SIZE, 'white'));
+        this.walls.push(new BodyPart(160,80, SIZE, 'white'));
         for(let i = 0; i < bodyPartCount; i++){
             let newPart = new BodyPart(i*SIZE, 0, SIZE, i == bodyPartCount-1 ? "red" : "grey");
             this.body.push(newPart);
@@ -49,13 +49,34 @@ class Snake{
             this.move();
             this.createFood();
         }, 500);
+
+        document.getElementById("twiceFastBtn").addEventListener("click", () => {
+        clearInterval(this.timer);
+        this.timer = setInterval(()=>{
+                this.move();
+                this.createFood();
+            }, 200);
+});
+
     }
 
     createFood(){
-        if(this.foods.length < MAXFOOD){
-            let rx = Math.floor(Math.random() * WINDOWSIZE/SIZE);
-            let ry = Math.floor(Math.random() * WINDOWSIZE/SIZE);
-            let food = new BodyPart(rx*SIZE, ry*SIZE, SIZE, 'green');
+        if (this.foods.length < MAXFOOD) {
+        let valid = false;
+        let food;
+
+        while (!valid) {
+            let rx = Math.floor(Math.random() * (WINDOWSIZE / SIZE));
+            let ry = Math.floor(Math.random() * (WINDOWSIZE / SIZE));
+            food = new BodyPart(rx * SIZE, ry * SIZE, SIZE, 'green');
+
+            const onSnake = this.body.some(part => part.x === food.x && part.y === food.y);
+            const onWall = this.walls.some(wall => wall.x === food.x && wall.y === food.y);
+
+            if (!onSnake && !onWall) {
+                valid = true;
+            }
+        }
             this.foods.push(food);
         } 
     }
@@ -157,8 +178,16 @@ class Snake{
         this.walls.forEach((wall) => wall.render());
         ctx.font = "30px Arial";
         ctx.fillStyle = "black";
+        
+        if (this.body.length == (WINDOWSIZE / SIZE) ** 2 - 5) {
+            ctx.fillText("!!!YOU WIN!!!", 10, 50);
+            clearInterval(this.timer);
+            return;
+}       
         ctx.fillText(this.isDeath ? "GAME OVER: " + this.body.length : "Score: "
             + this.body.length, 10, 50);
+
+
     };
 
 }
@@ -206,4 +235,5 @@ window.addEventListener("load", ()=>{
 document.getElementById("restartBtn").addEventListener("click", () => {
     window.location.reload();
 });
+
 
