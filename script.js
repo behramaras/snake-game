@@ -35,11 +35,11 @@ class Snake{
         this.isDeath = false;
         this.foods = [];
         this.walls = [];
-        this.walls.push(new BodyPart(80,80, SIZE, 'white'));
-        this.walls.push(new BodyPart(100,80, SIZE, 'white'));
-        this.walls.push(new BodyPart(120,80, SIZE, 'white'));
-        this.walls.push(new BodyPart(140,80, SIZE, 'white'));
-        this.walls.push(new BodyPart(160,80, SIZE, 'white'));
+        this.walls.push(new BodyPart(80,80, SIZE, 'black'));
+        this.walls.push(new BodyPart(100,80, SIZE, 'black'));
+        this.walls.push(new BodyPart(120,80, SIZE, 'black'));
+        this.walls.push(new BodyPart(140,80, SIZE, 'black'));
+        this.walls.push(new BodyPart(160,80, SIZE, 'black'));
         for(let i = 0; i < bodyPartCount; i++){
             let newPart = new BodyPart(i*SIZE, 0, SIZE, i == bodyPartCount-1 ? "red" : "grey");
             this.body.push(newPart);
@@ -51,11 +51,12 @@ class Snake{
         }, 500);
 
         document.getElementById("twiceFastBtn").addEventListener("click", () => {
-        clearInterval(this.timer);
-        this.timer = setInterval(()=>{
-                this.move();
-                this.createFood();
-            }, 200);
+            if (this.isDeath) return;
+            clearInterval(this.timer);
+            this.timer = setInterval(()=>{
+                    this.move();
+                    this.createFood();
+                }, 200);
 });
 
     }
