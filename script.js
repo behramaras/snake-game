@@ -2,7 +2,7 @@ const canvas = document.getElementById("myCanvas");
 const ctx = canvas.getContext("2d");
 
 const SIZE = 20;
-const WINDOWSIZE = 200;
+const WINDOWSIZE = 600;
 const MAXFOOD = 5;
 
 class BodyPart{
