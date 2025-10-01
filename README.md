@@ -28,10 +28,10 @@ git clone https://github.com/behramaras/snake-game.git
 3. Play the game:
    - **Keyboard:**
    - Snake controls:  
-    - W / ArrowUp    → Up
-    - A / ArrowLeft  → Left
-    - S / ArrowDown  → Down
-    - D / ArrowRight → Right
+    - **W** / **ArrowUp**    → Up
+    - **A** / **ArrowLeft**  → Left
+    - **S** / **ArrowDown**  → Down
+    - **D** / **ArrowRight** → Right
       
    - **Mobile:**
      - Tap the on-screen directional buttons to control the snake
