@@ -199,7 +199,7 @@ window.addEventListener("load", ()=>{
 
     document.addEventListener("keypress", (e)=>{
         switch(e.key){
-            case "w":
+            case "w" || 72:
                 snake.changeDirection(0);
                 break;
             case "d":
@@ -213,6 +213,26 @@ window.addEventListener("load", ()=>{
                 break;
         }
     });
+
+    document.addEventListener("keydown", (e)=>{
+        switch(e.key){
+            case "ArrowUp":
+                e.preventDefault()
+                snake.changeDirection(0);
+                break;
+            case "ArrowRight":
+                snake.changeDirection(1);
+                break;
+            case "ArrowDown":
+                e.preventDefault()
+                snake.changeDirection(2);
+                break;
+            case "ArrowLeft":
+                snake.changeDirection(3);
+                break;
+        }
+    });
+
     document.querySelector('.up').addEventListener('click', () => snake.changeDirection(0));
     document.querySelector('.right').addEventListener('click', () => snake.changeDirection(1));
     document.querySelector('.down').addEventListener('click', () => snake.changeDirection(2));
