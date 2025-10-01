@@ -199,7 +199,7 @@ window.addEventListener("load", ()=>{
 
     document.addEventListener("keypress", (e)=>{
         switch(e.key){
-            case "w" || 72:
+            case "w":
                 snake.changeDirection(0);
                 break;
             case "d":
